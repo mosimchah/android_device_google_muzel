@@ -5,26 +5,27 @@
 #
 
 # Inherit some common stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aicp/config/common_full_phone.mk)
 
 # Inherit device configuration
-DEVICE_CODENAME := mustang
+DEVICE_CODENAME := frankel
 DEVICE_PATH := device/google/muzel
-VENDOR_PATH := vendor/google/mustang
+VENDOR_PATH := vendor/google/frankel
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
-PRODUCT_MODEL := Pixel 10 Pro XL
-PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
+PRODUCT_MODEL := Pixel 10
+PRODUCT_NAME := aicp_$(DEVICE_CODENAME)
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2992
-TARGET_SCREEN_WIDTH := 1344
+TARGET_SCREEN_HEIGHT := 2424
+TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="mustang-user 16 BP4A.260205.001 14624666 release-keys" \
-    BuildFingerprint=google/mustang/mustang:16/BP4A.260205.001/14624666:user/release-keys \
+    BuildDesc="frankel-user 16 BP4A.260205.001 14624666 release-keys" \
+    BuildFingerprint=google/frankel/frankel:16/BP4A.260205.001/14624666:user/release-keys \
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
+$(call inherit-product, $(DEVICE_PATH)/aicp.mk)

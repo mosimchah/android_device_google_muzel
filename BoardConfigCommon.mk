@@ -30,3 +30,6 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
 
 # WiFi
 include $(DEVICE_PATH)/wifi/BoardConfig-wifi.mk
+
+# Reserve Space
+include vendor/aicp/config/BoardConfigReservedSize.mk
